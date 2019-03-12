@@ -1,0 +1,21 @@
+<div class="container better-form">
+
+<h2>Booking Form</h2>
+
+<%= simple_form_for [@booking] do |f| %>
+
+  <div class="form-inputs">
+    <%= f.input :start_date,
+                required: true,
+                autofocus: true %>
+    <%= f.input :end_date,
+                required: true %>
+    <%= f.association :trip, as: :select, required: false %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Book", name: "booking_id" , value: @booking.id, class: "btn btn-flat" %>
+  </div>
+<% end %>
+
+</div>
