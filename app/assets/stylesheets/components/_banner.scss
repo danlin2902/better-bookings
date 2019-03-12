@@ -1,5 +1,5 @@
 .banner {
-  height: 96vh;
+  height: 100vh;
   background-size: cover;
   background-position: center;
   // padding: 150px 0;
@@ -21,10 +21,10 @@
 }
 
 .head-container{
-  // position: fixed;
+  position: fixed;
   text-align: center;
-  margin: 0 auto;
-   padding: 250px;
+  top: 180px;
+
   // left: 120px;
 
   width: 100%;

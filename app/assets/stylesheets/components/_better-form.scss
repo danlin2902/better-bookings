@@ -1,0 +1,44 @@
+.better-form{
+  width: 50%;
+  margin: 0 auto;
+  top: 100px;
+  position: relative;
+  border-radius: 3px;
+  box-shadow: 0 0 30px -8px rgba(45,45,45,0.7);
+}
+.form-inputs{
+  width: 70%;
+  margin: 0 auto;
+}
+.better-form h2{
+  text-align: center;
+  padding: 34px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+.better-form  .btn{
+  left: -15px;
+}
+.better-form a {
+
+  margin: 0 auto;
+  position: relative;
+  bottom: 20px ;
+
+}
+
+// media queries guys!
+
+@media screen and (max-width: 992px) {
+  .better-form {
+    width: 80%;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  .better-form {
+    width: 100%;
+  }
+}
