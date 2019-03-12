@@ -1,7 +1,12 @@
-
-
-<h1><%= @trip.name %></h1>
-<h3><%= @trip.destination %></h3>
-<p>Trip length: <%= @trip.length %> days</p>
-<p>Cost: $<%= @trip.cost %></p>
+  <div class="show-card-container">
+    <div class="card-trip">
+      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+       <h2><%= @trip.destination %></h2>
+       <div>
+       <p class="card-trip-infos">Trip length: <%= @trip.length %> days Cost: $<%= @trip.cost %>
+       </p>
+       </div>
+    </div>
+  </div>
+  <h1></h1>
 
