@@ -1,0 +1,13 @@
+
+
+
+<div class="container better-form">
+  <h1>Create a trip</h1>
+<%= simple_form_for @trip do |f| %>
+  <%= f.input :name %>
+  <%= f.input :destination %>
+  <%= f.input :length %>
+  <%= f.input :cost %>
+  <%= f.submit "Add trip", class: "btn btn-flat" %>
+  <% end %>
+</div>
