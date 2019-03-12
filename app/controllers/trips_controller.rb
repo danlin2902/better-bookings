@@ -23,7 +23,7 @@ class TripsController < ApplicationController
   private
 
   def trip_params
-    params.require(:trip).permit(:length, :cost, :destination)
+    params.require(:trip).permit(:length, :cost, :destination, :photo)
   end
 
   def find_trips
