@@ -7,6 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
 require 'open-uri'
+
 places_array = ["Tokyo", "Delhi", "Shanghai", "Sao Paulo", "Mumbai", "Mexico City", "Beijing", "Kyoto", "Cairo", "New York", "Dhaka", "Karachi", "Buenos Aires", "Kolkata", "Istanbul", "Chongquin", "Lagos", "Manila",
 "Rio de Janeiro", "Guangzhou-Foshan", "Los Angeles", "Moscow", "Kinshasa", "Tianjin", "Paris", "Shenzhen", "Jakarta", "London", "Bangalore",
 "Lima", "Chennai", "Seoul", "Bogota", "Nagoya", "Johannesburg", "Bangkok","Hyderabad",
@@ -66,6 +67,7 @@ places_array = ["Tokyo", "Delhi", "Shanghai", "Sao Paulo", "Mumbai", "Mexico Cit
 "Fortaleza",
 "Kunming"]
 
+previous
 photos_url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photoreference="
 
 def query_helper(word)
@@ -112,17 +114,20 @@ places_query_array = places_query_array.take(2)
 places_query_array.each do |query|
   response = open(query)
   response_json = JSON.parse(response.read)
-  if response_json["status"] = "OK"
+  if response_json["status"] == "OK"
     results = response_json["results"]
     results.each do |result|
       location_results = result["formatted_address"]
       name_results = result["name"]
       if result["photos"]
         photo_results = get_picture(result["photos"][0]["photo_reference"])
+        previous = photo_results
+        create_instance(name_results, location_results, photo_results)
       else
         photo_results = "image/upload/v1552408066/et0ewozc4jifnesnca83.jpg"
+        create_instance(name_results, location_results, previous)
       end
-      create_instance(name_results, location_results, photo_results)
+
     end
   end
 end

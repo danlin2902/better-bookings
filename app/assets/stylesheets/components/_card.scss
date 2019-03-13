@@ -1,0 +1,10 @@
+
+.card-deck {
+  display:flex;
+  background-color: black;
+}
+
+.card {
+  flex-grow: 1;
+  width: 20%;
+}

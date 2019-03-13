@@ -7,11 +7,25 @@
 
   <div class="head-container">
     <h1>Better Bookings</h1>
-    <p>better than Jesus</p>
+    <p>The world is at your fingertips</p>
     <%= link_to "Book now", new_booking_path, class: "btn btn-flat" %>
   </div>
 </div>
 <!-- footer -->
+<div class="inedx-cards" style="display: flex; flex-wrap: wrap; flex-direction: row;">
+  <% @trip.each do |trip| %>
+  <div class="card">
+    <%= cl_image_tag trip.photo, class: "card-img-top" %>
+    <div class="card-body">
+      <h5 class="card-title"><%= trip.name %></h5>
+      <p class="card-text"> <%= trip.destination %></p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<%= @trip %>
 <div class="footer">
   <div class="footer-links">
     <a href="#"><i class="fab fa-github"></i></a>
