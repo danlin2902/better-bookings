@@ -70,7 +70,8 @@
 }
 
 .img-card{
-  flex-grow: 1;
-  height:250px;
-  width: 30%;
+  flex: 0 0 1;
+  min-height: 200px;
+  max-height:200px;
+  width: 100%;
 }

@@ -9,6 +9,7 @@ require 'json'
 require 'open-uri'
 
 Trip.destroy_all
+Booking.destroy_all
 
 places_array = ["Tokyo", "Delhi", "Shanghai", "Sao Paulo", "Mumbai", "Mexico City", "Beijing", "Kyoto", "Cairo", "New York", "Dhaka", "Karachi", "Buenos Aires", "Kolkata", "Istanbul", "Chongquin", "Lagos", "Manila",
 "Rio de Janeiro", "Guangzhou-Foshan", "Los Angeles", "Moscow", "Kinshasa", "Tianjin", "Paris", "Shenzhen", "Jakarta", "London", "Bangalore",
@@ -91,7 +92,7 @@ def places_query_generator(normalized_input)
   places_url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=trips+to+"
   api_key = "&key=" + ENV['GOOGLE_API_KEY']
   string = ""
-  string = places_url + normalized_input + ENV['GOOGLE_API_KEY']
+  string = places_url + normalized_input + api_key
   return string
 end
 
@@ -113,7 +114,7 @@ end
 
 places_query_array = []
 places_array.each { |place| places_query_array << query_helper(place) }
-places_query_array = places_query_array.take(20)
+places_query_array = places_query_array.take(15)
 
 places_query_array.each do |query|
   response = open(query)
@@ -130,7 +131,6 @@ places_query_array.each do |query|
       else
         create_instance(name_results, location_results, previous)
       end
-
     end
   end
 end
