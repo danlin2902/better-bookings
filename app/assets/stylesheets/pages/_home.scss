@@ -1,1 +1,7 @@
 // Specific CSS for your home-page
+#text{
+  display: none;
+}
+body > div.banner.slider > div.head-container.better-form-search > form > div > label {
+  display: none;
+}

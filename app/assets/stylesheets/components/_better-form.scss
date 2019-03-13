@@ -27,6 +27,34 @@
   bottom: 20px ;
 
 }
+.better-form-search {
+  width: 30%;
+  margin: 0 auto;
+  top: 16px;
+  position: relative;
+  border-radius: 3px;
+
+}
+.better-form-search h1{
+  text-align: -webkit-auto;
+  padding: 8px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 90px;
+  font-weight: bold;
+
+}
+.better-form-search .btn-flat{
+  color: white;
+  position: relative;
+  top: 42px;
+  width: 200px;
+  border-radius: 4px;
+  background: #1EDD88;
+  transition: background 0.3s ease;
+  height: 48px;
+  font-size: 22px;
+  padding: 6px;
+}
 
 // media queries guys!
 
@@ -35,7 +63,13 @@
     width: 80%;
   }
 }
-
+h2{
+  text-align: center;
+  padding: 34px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
 /* On screens that are 600px or less, set the background color to olive */
 @media screen and (max-width: 600px) {
   .better-form {

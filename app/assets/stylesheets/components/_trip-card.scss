@@ -53,6 +53,7 @@
     justify-content: space-between;
     margin: 10% auto;
 }
+
 .card-trip-right{
   overflow: hidden;
   height: 100%;
@@ -60,3 +61,16 @@
   flex-grow: 1;
 }
 
+// index cards
+.index-cards{
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.img-card{
+  flex-grow: 1;
+  height:250px;
+  width: 30%;
+}

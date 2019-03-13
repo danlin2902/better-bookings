@@ -5,17 +5,20 @@
   <div class='banner slide2'></div>
   <div class='banner slide3'></div>
 
-  <div class="head-container">
+  <div class="head-container better-form-search">
+    <h1>Better Bookings</h1>
  <%= simple_form_for :search, url: root_path, method: :get do |f| %>
-   <%= f.input :query, as: :string %>
-   <%= f.submit "submit" %>
+   <%= f.input :query, as: :string, :placeholder => 'Search for trips' %>
+   <%= f.submit "submit ", class: "btn btn-flat" %>
  <% end %>
   </div>
 </div>
-<!-- footer -->
-<div class="inedx-cards" style="display: flex; flex-wrap: wrap; flex-direction: row;">
+
+<h2>Reccomendations</h2>
+
+<div class="index-cards container" >
   <% @trip.each do |trip| %>
-  <div class="card">
+  <div class="img-card">
     <%= cl_image_tag trip.photo, class: "card-img-top" %>
     <div class="card-body">
       <h5 class="card-title"><%= link_to trip.name, trip_path(trip) %></h5>
@@ -25,6 +28,8 @@
   </div>
   <% end %>
 </div>
+<!-- footer -->
+
 
 <div class="footer">
   <div class="footer-links">
