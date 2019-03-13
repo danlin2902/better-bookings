@@ -109,6 +109,8 @@ def create_instance(name, location, picture_url)
   trip.save
 end
 
+# some comment
+
 places_query_array = []
 places_array.each { |place| places_query_array << query_helper(place) }
 places_query_array = places_query_array.take(2)
