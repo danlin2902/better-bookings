@@ -2,7 +2,8 @@ class BookingsController < ApplicationController
     before_action :find_bookings, only: [ :show ]
 
   def index
-    @bookings = Booking.all
+    # raise
+    @bookings = Booking.where("user_id = #{current_user[:id]}")
   end
 
   def show
@@ -32,6 +33,6 @@ class BookingsController < ApplicationController
   end
 
   def find_bookings
-    @booking = Booking.where("user_id = current_user")
+    @booking = Booking.find(params[:id])
   end
 end
