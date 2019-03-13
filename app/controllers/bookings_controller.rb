@@ -9,18 +9,17 @@ class BookingsController < ApplicationController
   end
 
   def new
+    @trip = Trip.find(params[:trip_id])
     @booking = Booking.new
-    @trip = Trip.new
     # @booking.trip = @trip
   end
 
   def create
-
     @booking = Booking.new(booking_params)
     @booking.user = current_user
-    @booking.trip = Trip.find(params[:booking][:trip_id])
+    @booking.trip = Trip.find(params[:trip_id])
     if @booking.save
-      redirect_to booking_path(@booking)
+      redirect_to trip_booking_url(@booking.trip, @booking)
     else
       render :new
     end
@@ -33,6 +32,6 @@ class BookingsController < ApplicationController
   end
 
   def find_bookings
-    @booking = Booking.find(params[:id])
+    @booking = Booking.where("user_id = current_user")
   end
 end

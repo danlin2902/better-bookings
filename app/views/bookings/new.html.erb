@@ -2,7 +2,7 @@
 
 <h2>Booking Form</h2>
 
-<%= simple_form_for [@booking] do |f| %>
+<%= simple_form_for [ @trip, @booking] do |f| %>
 
   <div class="form-inputs">
     <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
@@ -12,7 +12,6 @@
                 autofocus: true %>
     <%#= f.input :end_date,
                 required: true %>
-    <%= f.association :trip, as: :select, required: false %>
 
 
   </div>
