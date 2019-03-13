@@ -8,6 +8,8 @@
 require 'json'
 require 'open-uri'
 
+Trip.destroy_all
+
 places_array = ["Tokyo", "Delhi", "Shanghai", "Sao Paulo", "Mumbai", "Mexico City", "Beijing", "Kyoto", "Cairo", "New York", "Dhaka", "Karachi", "Buenos Aires", "Kolkata", "Istanbul", "Chongquin", "Lagos", "Manila",
 "Rio de Janeiro", "Guangzhou-Foshan", "Los Angeles", "Moscow", "Kinshasa", "Tianjin", "Paris", "Shenzhen", "Jakarta", "London", "Bangalore",
 "Lima", "Chennai", "Seoul", "Bogota", "Nagoya", "Johannesburg", "Bangkok","Hyderabad",
@@ -67,7 +69,7 @@ places_array = ["Tokyo", "Delhi", "Shanghai", "Sao Paulo", "Mumbai", "Mexico Cit
 "Fortaleza",
 "Kunming"]
 
-previous
+previous = ""
 photos_url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photoreference="
 
 def query_helper(word)
@@ -103,7 +105,7 @@ def create_instance(name, location, picture_url)
   cost = Array (1..200)
   trip = Trip.new(name: name, destination: location, length: length.sample, cost: cost.sample)
   trip.remote_photo_url = picture_url
-  p trip
+  puts trip.remote_photo_url
   trip.save
 end
 
@@ -126,7 +128,6 @@ places_query_array.each do |query|
         previous = photo_results
         create_instance(name_results, location_results, photo_results)
       else
-        photo_results = "image/upload/v1552408066/et0ewozc4jifnesnca83.jpg"
         create_instance(name_results, location_results, previous)
       end
 
