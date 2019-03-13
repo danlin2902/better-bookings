@@ -1,3 +1,26 @@
+<div class="container">
+
 <h1>My Bookings</h1>
 
+<div class="inedx-cards" style="display: flex; flex-wrap: wrap; flex-direction: row;">
 
+  <% @bookings.each do |booking| %>
+
+  <div class="card">
+    <% if booking.trip.photo.present? %>
+    <%= cl_image_tag @booking.trip.photo, height: 250, width: 250 %>
+    <% else %>
+
+    <% end %>
+    <div class="card-body">
+      <h5 class="card-title"><%= booking.trip.name %></h5>
+      <p class="card-text"><%= booking.start_date %></p>
+      <p class="card-text"> <%= booking.end_date %></p>
+
+    </div>
+
+  </div>
+  <% end %>
+</div>
+
+</div>
