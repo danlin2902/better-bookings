@@ -89,14 +89,14 @@ end
 
 def places_query_generator(normalized_input)
   places_url = "https://maps.googleapis.com/maps/api/place/textsearch/json?query=trips+to+"
-  api_key = ENV['GOOGLE_API_KEY']
+  api_key = "&key=" + ENV['GOOGLE_API_KEY']
   string = ""
   string = places_url + normalized_input + ENV['GOOGLE_API_KEY']
   return string
 end
 
 def get_picture(query)
-  photos_url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photoreference=#{query + ENV['GOOGLE_API_KEY']}"
+  photos_url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photoreference=#{query}&key=#{ENV['GOOGLE_API_KEY']}"
   photos_url
 end
 
@@ -113,7 +113,7 @@ end
 
 places_query_array = []
 places_array.each { |place| places_query_array << query_helper(place) }
-places_query_array = places_query_array.take(2)
+places_query_array = places_query_array.take(20)
 
 places_query_array.each do |query|
   response = open(query)
