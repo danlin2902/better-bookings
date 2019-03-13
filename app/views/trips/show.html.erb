@@ -1,11 +1,17 @@
   <div class="show-card-container">
     <div class="card-trip">
-      <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
-       <h2><%= @trip.destination %></h2>
+      <%= cl_image_tag @trip.photo %>
+      <div class="items" style="display: block; text-align: center;">
+      <h2><%= @trip.name %></h2>
+       <p><%= @trip.destination %></p>
+      </div>
        <div>
        <p class="card-trip-infos">Trip length: <%= @trip.length %> days Cost: $<%= @trip.cost %>
        </p>
        </div>
+    </div>
+    <div class="head-container">
+      <%= link_to "Book now", new_trip_booking_url(@trip), class: "btn btn-flat" %>
     </div>
   </div>
   <h1></h1>
