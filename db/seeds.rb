@@ -7,9 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
 require 'open-uri'
+require 'pry'
 
 Trip.destroy_all
 Booking.destroy_all
+
 
 places_array = ["Tokyo", "Delhi", "Shanghai", "Sao Paulo", "Mumbai", "Mexico City", "Beijing", "Kyoto", "Cairo", "New York", "Dhaka", "Karachi", "Buenos Aires", "Kolkata", "Istanbul", "Chongquin", "Lagos", "Manila",
 "Rio de Janeiro", "Guangzhou-Foshan", "Los Angeles", "Moscow", "Kinshasa", "Tianjin", "Paris", "Shenzhen", "Jakarta", "London", "Bangalore",
@@ -114,11 +116,12 @@ end
 
 places_query_array = []
 places_array.each { |place| places_query_array << query_helper(place) }
-places_query_array = places_query_array.take(15)
+places_query_array = places_query_array.take(2)
 
 places_query_array.each do |query|
   response = open(query)
   response_json = JSON.parse(response.read)
+  binding.pry
   if response_json["status"] == "OK"
     results = response_json["results"]
     results.each do |result|
