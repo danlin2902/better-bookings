@@ -1,16 +1,17 @@
-<div class="container">
+<div class="show-card-container">
+  <div class="card-trip">
+    <% if @booking.trip.photo.present? %>
+    <%= cl_image_tag @booking.trip.photo, height: 300, width: 400, crop: :fill %>
+    <% else %>
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg">
+    <% end %>
+    <div class="card-trip-right">
 
-<% if @booking.trip.photo.present? %>
-<%= cl_image_tag @booking.trip.photo, height: 300, width: 400, crop: :fill %>
-<% end %>
-
-<h1><%= @booking.trip.name %></h1>
-
-<h3>Start date: <%= @booking.start_date %></h3>
-<h3>End date: <%= @booking.end_date %></h3>
-
-<p><%= @booking.trip.destination %></p>
-
-
-
+      <h2 class="card-trip-infos"><%= @booking.trip.destination %></h2>
+      <div class="booking-card-infos">
+        <h4><i class="far fa-calendar-check"></i> <%= @booking.start_date %></h4>
+        <h4 class="card-trip-infos"><i class="far fa-calendar-check"></i> <%= @booking.end_date %></h4>
+      </div>
+    </div>
+  </div>
 </div>
