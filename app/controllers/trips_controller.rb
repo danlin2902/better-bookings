@@ -3,7 +3,7 @@ class TripsController < ApplicationController
   def index
 
     if params[:query].present?
-      @trips = Trip.near(params[:query], 200)
+      @trips = Trip.near(params[:query], 500)
             @markers = @trips.map do |maptrip|
       {
         lng: maptrip.longitude,
