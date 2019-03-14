@@ -63,15 +63,51 @@
 
 // index cards
 .index-cards{
+  width: 90%;
 
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
 }
 
 .img-card{
-  flex: 0 0 1;
+
   min-height: 200px;
   max-height:200px;
   width: 100%;
+}
+.card-index{
+  flex-grow: 1;
+    width: 20%;
+    margin: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 3px;
+}
+.index-index:hover{
+  width: 30%;
+  transition: 0.3s;
+  z-index: 1;
+}
+@media screen and (max-width: 992px) {
+  .card-index{
+  flex-grow: 1;
+    width: 50%;
+    margin: 10px auto;
+  }
+  .index-cards{
+    width: 100;
+    margin: 10px auto;
+  }
+
+}
+
+
+@media screen and (max-width: 600px) {
+.card-index{
+  flex-grow: 1;
+    width: 90%;
+    margin: 10px auto;
+
+  }
 }

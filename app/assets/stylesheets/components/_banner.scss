@@ -33,6 +33,48 @@
   font-size: 62px;
   font-weight: bold;
 }
+
+// MEDIA FUCKING QUERIES
+@media screen and (max-width: 992px) {
+  .head-container h1 {
+    margin: 0 auto;
+
+    font-size:82px !important;
+    font-weight: bold;
+  }
+  .head-container .btn{
+    color: white;
+    position: relative;
+    top: 80px;
+    width: 120px;
+    border-radius: 4px;
+    background: #1EDD88;
+    transition: background 0.3s ease;
+    height: 40px;
+    font-size: 22px;
+    padding: 6px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .head-container h1 {
+    margin: 0 auto;
+    padding: 0;
+    font-size:12px;
+    font-weight: bold;
+  }
+  .head-container .btn{
+    color: white;
+    position: relative;
+    top: 80px;
+    width: 120px;
+    border-radius: 4px;
+    background: #1EDD88;
+    transition: background 0.3s ease;
+    height: 40px;
+    font-size: 22px;
+    padding: 6px;
+  }
+}
 // slides
 
 .slider {
