@@ -1,18 +1,18 @@
   <div class="show-card-container">
-    <div class="card-trip">
+    <div class="show-card-trip">
       <%= cl_image_tag @trip.photo %>
-      <div class="items" style="display: block; text-align: center;">
+
+      <div class="show-card-items">
         <h2><%= @trip.name %></h2>
-        <p><%= @trip.destination %></p>
-      </div>
-      <div>
+         <p><%= @trip.destination %></p>
         <p class="card-trip-infos">Trip length: <%= @trip.length %> days Cost: $<%= @trip.cost %>
         </p>
-        <%= link_to "Write a review", new_trip_review_path(@trip), class: "btn btn-secondary" %>
+        <%= link_to "Book now", new_trip_booking_url(@trip), class: "btn btn-flat show-btn" %>
+
       </div>
     </div>
-    <div class="head-container">
-      <%= link_to "Book now", new_trip_booking_url(@trip), class: "btn btn-flat" %>
+    <div class="show-btn">
+      <%= link_to "Write a review", new_trip_review_path(@trip), class: "btn btn-secondary" %>
     </div>
   </div>
 
