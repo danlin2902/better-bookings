@@ -3,7 +3,7 @@
 
 <div class="container better-form" style="background-color: white">
   <h2>Write a review</h2>
-<%= simple_form_for @review, url: reviews_new_url do |f| %>
+<%= simple_form_for [@trip, @review] do |f| %>
   <%= f.input :description %>
   <%= f.submit "Add review", class: "btn btn-flat" %>
   <% end %>
