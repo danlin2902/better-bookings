@@ -12,6 +12,5 @@
   },
   "devDependencies": {
     "webpack-dev-server": "^3.2.1"
-  },
-  "uglify-js": "git+https://github.com/mishoo/UglifyJS2.git#harmony"
+  }
 }
