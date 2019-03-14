@@ -4,6 +4,7 @@
 
 </div>
 
+<div class="trip-search">
 
 <%= form_tag trips_path, method: :get do %>
   <%= text_field_tag :query,
@@ -12,6 +13,7 @@
     placeholder: "Find a trip"
   %>
 <% end %>
+</div>
 
 
 <div class="trip-index-container">

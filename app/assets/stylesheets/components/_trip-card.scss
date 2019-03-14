@@ -94,6 +94,15 @@
   font-size: 52px;
   font-weight: bold;
 }
+.trip-search{
+  width: 59.6%;
+  height: 4.8vh;
+  padding-top: 2px;
+}
+.trip-search #query{
+      height: -webkit-fill-available;
+      font-size: 2rem;
+}
 .trip-index-container{
   width: 60%;
   height: 100vh;
@@ -116,8 +125,9 @@
   width: 100%;
 }
 .trip-card-index{
-  flex-grow: 0 0 1;
+  flex: 1;
     width: 49%;
+    max-height: 400px;
     margin: 5px 5px 5px 0;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     border-radius: 3px;

@@ -20,10 +20,7 @@
     <h3>Reviews for <%= @trip.name %></h3>
     <div class="review-view">
       <% @trip.reviews.each do |review| %>
-      <ul>
-        <li class="review-list"><%= review.description %></li>
-      </ul>
+        <div class="review-list"><%= review.description %></div>
       <% end %>
     </div>
   </div>
-  <h1></h1>

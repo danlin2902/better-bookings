@@ -107,9 +107,10 @@ def create_instance(name, location, picture_url)
   password = 123456
   length = Array (1..20)
   cost = Array (1..200)
-  # user = User.new(name: first_names.sample, email: "#{first_names.sample}@lewagon.com", password: password)
+  user = User.new(name: first_names.sample, email: "#{first_names.sample}@lewagon.com", password: password)
   trip = Trip.new(name: name, destination: location, length: length.sample, cost: cost.sample)
-  # user.save
+  user.save
+  trip.user = user
   trip.remote_photo_url = picture_url
   puts trip.remote_photo_url
   trip.save
