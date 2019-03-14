@@ -1,5 +1,6 @@
 class Trip < ApplicationRecord
   has_many :users, through: :bookings
+  belongs_to :user
   has_many :reviews
 
   has_many :bookings, dependent: :destroy

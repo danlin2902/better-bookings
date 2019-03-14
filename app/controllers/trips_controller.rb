@@ -19,7 +19,6 @@ class TripsController < ApplicationController
 
   def dashboard
     @trips = Trip.where(user: current_user)
-    raise
   end
 
   def show
@@ -32,7 +31,7 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
-    # @trip.user = current_user
+    @trip.user = current_user
     if @trip.save
       redirect_to trip_path(@trip)
     else
