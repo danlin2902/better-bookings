@@ -1,7 +1,5 @@
 class BookingsController < ApplicationController
-    before_action :find_bookings, only: [ :show ]
-    skip_before_action :verify_authenticity_token, :only => :create
-
+  before_action :find_bookings, only: [ :show ]
   def index
     # raise
     @bookings = Booking.where("user_id = #{current_user[:id]}")
@@ -17,6 +15,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.trip = Trip.find(params[:trip_id])
