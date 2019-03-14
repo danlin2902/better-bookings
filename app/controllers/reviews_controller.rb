@@ -15,11 +15,9 @@ class ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.trip = Trip.find(params[:trip_id])
-    if @review.save
-      redirect_to trip_reviews_path
-    else
-      render :new
-    end
+    # raise
+     @review.save
+    redirect_to trip_url
   end
 
   private
