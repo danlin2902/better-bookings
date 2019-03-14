@@ -8,7 +8,8 @@ class TripsController < ApplicationController
     @markers = @maptrips.map do |maptrip|
       {
         lng: maptrip.longitude,
-        lat: maptrip.latitude
+        lat: maptrip.latitude,
+        infoWindow: render_to_string(partial: "/trips/map_box", locals: { trip: maptrip })
       }
     end
 
