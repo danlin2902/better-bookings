@@ -1,13 +1,14 @@
 class TripsController < ApplicationController
   before_action :find_trips, only: [ :show ]
   def index
+
     if params[:query].present?
-      @trips = Trip.near(params[:query], 10)
+      @trips = Trip.near(params[:query], 50)
     else
       @trips = Trip.all
 
     end
-
+    
     @maptrips = Trip.where.not(latitude: nil, longitude: nil)
 
 
@@ -18,7 +19,10 @@ class TripsController < ApplicationController
         infoWindow: render_to_string(partial: "/trips/map_box", locals: { trip: maptrip })
       }
     end
+  end
 
+  def dashboard
+    @trips = Trip.where(user: current_user)
   end
 
   def show
@@ -31,7 +35,7 @@ class TripsController < ApplicationController
 
   def create
     @trip = Trip.new(trip_params)
-    # @trip.user = current_user
+    @trip.user = current_user
     if @trip.save
       redirect_to trip_path(@trip)
     else

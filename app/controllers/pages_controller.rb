@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
   def home
     if params[:search].present?
-      @trip = Trip.where("destination LIKE ?", "%#{params[:search][:query]}%")
+      @trip = Trip.where("destination ILIKE ?", "%#{params[:search][:query]}%")
     else
       @trip = Trip.all.sample(12)
    end
