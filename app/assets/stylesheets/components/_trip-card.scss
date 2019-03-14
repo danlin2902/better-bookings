@@ -1,8 +1,4 @@
-.show-card-container{
-  height: 70vh;
-  padding-top: 14%;
 
-}
 .card-trip {
   overflow: hidden;
   height: 100%;
@@ -91,7 +87,7 @@
 // ----- TRIP INDEX CARDS ------------
 .trips-index-header{
   margin: 20px auto;
-  padding: 20px;
+
   text-align: center;
 
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -126,6 +122,38 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     border-radius: 3px;
 }
+
+// ------SHOW TRIP ---------
+
+.show-card-container{
+  height: 80vh;
+  padding-top: 10%;
+
+}
+.show-card-trip {
+  width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 100%;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.show-card-trip img {
+  height: 100%;
+  width: 50%;
+  object-fit: cover;
+}
+.show-card-items{
+ margin: 0 auto;
+height: inherit;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+}
+
 // ----- MEDIA FUCKING QUERIES -------
 @media screen and (max-width: 992px) {
   .card-index{
