@@ -7,7 +7,7 @@
 
   <div class="head-container better-form-search">
     <h1>Better Bookings</h1>
- <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+ <%= simple_form_for :search, url: trips_url, method: :get do |f| %>
    <%= f.input :query, as: :string, :placeholder => 'Search for trips' %>
    <%= f.submit "submit ", class: "btn btn-flat" %>
  <% end %>

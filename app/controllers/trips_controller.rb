@@ -1,8 +1,11 @@
 class TripsController < ApplicationController
   before_action :find_trips, only: [ :show ]
   def index
-
-    @trips = Trip.all
+    if params[:search].present?
+      @trips = Trip.search_by_all(params[:search][:query])
+    else
+      @trips = Trip.all.sample(12)
+   end
     @maptrips = Trip.where.not(latitude: nil, longitude: nil)
 
     @markers = @maptrips.map do |maptrip|
@@ -11,7 +14,11 @@ class TripsController < ApplicationController
         lng: maptrip.latitude
       }
     end
+  end
 
+  def dashboard
+    @trips = Trip.where(user: current_user)
+    raise
   end
 
   def show

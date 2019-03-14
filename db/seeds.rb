@@ -73,6 +73,7 @@ places_array = ["Tokyo", "Delhi", "Shanghai", "Sao Paulo", "Mumbai", "Mexico Cit
 
 previous = ""
 photos_url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photoreference="
+first_names = ["Andiry", "Daniel", "Regi", "Jacob", "Arbi", "AIDS", "Giacomo <3"]
 
 def query_helper(word)
   split = word.split(" ")
@@ -103,9 +104,15 @@ def get_picture(query)
 end
 
 def create_instance(name, location, picture_url)
+  first_names = ["Andiry", "Daniel", "Regi", "Jacob", "Arbi", "AIDS", "Giacomo <3"]
   length = Array (1..20)
   cost = Array (1..200)
+  user = User.new(name: first_names.sample, email: "#{first_names.sample}@lewagon.com")
+
   trip = Trip.new(name: name, destination: location, length: length.sample, cost: cost.sample)
+  binding.pry
+  trip.user_id = user
+    user.save
   trip.remote_photo_url = picture_url
   puts trip.remote_photo_url
   trip.save
