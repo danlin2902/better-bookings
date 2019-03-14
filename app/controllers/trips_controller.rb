@@ -3,21 +3,33 @@ class TripsController < ApplicationController
   def index
 
     if params[:query].present?
-      @trips = Trip.near(params[:query], 50)
-    else
-      @trips = Trip.all
-
-    end
-    
-    @maptrips = Trip.where.not(latitude: nil, longitude: nil)
-
-
-    @markers = @maptrips.map do |maptrip|
+      @trips = Trip.near(params[:query], 200)
+            @markers = @trips.map do |maptrip|
       {
         lng: maptrip.longitude,
         lat: maptrip.latitude,
         infoWindow: render_to_string(partial: "/trips/map_box", locals: { trip: maptrip })
       }
+    end
+    else
+      @trips = Trip.all
+      @markers = @trips.map do |maptrip|
+      {
+        lng: maptrip.longitude,
+        lat: maptrip.latitude,
+        infoWindow: render_to_string(partial: "/trips/map_box", locals: { trip: maptrip })
+      }
+    end
+
+    @maptrips = Trip.where.not(latitude: nil, longitude: nil)
+
+
+    # @markers = @maptrips.map do |maptrip|
+    #   {
+    #     lng: maptrip.longitude,
+    #     lat: maptrip.latitude,
+    #     infoWindow: render_to_string(partial: "/trips/map_box", locals: { trip: maptrip })
+    #   }
     end
   end
 
