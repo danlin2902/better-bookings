@@ -1,12 +1,16 @@
 class TripsController < ApplicationController
   before_action :find_trips, only: [ :show ]
   def index
-    if params[:search].present?
-      @trips = Trip.search_by_all(params[:search][:query])
+
+    if params[:query].present?
+      @trips = Trip.near(params[:query], 50)
     else
-      @trips = Trip.all.sample(12)
-   end
+      @trips = Trip.all
+
+    end
+    
     @maptrips = Trip.where.not(latitude: nil, longitude: nil)
+
 
     @markers = @maptrips.map do |maptrip|
       {

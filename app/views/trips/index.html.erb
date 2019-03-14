@@ -1,6 +1,18 @@
 
+<div class="trips-index-header">
+  <h1 >Trips</h1>
 
-<h1 class="trips-index-header">Trips</h1>
+</div>
+
+
+<%= form_tag trips_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a trip"
+  %>
+<% end %>
+
 
 <div class="trip-index-container">
 <div class="trip-index-cards " >
