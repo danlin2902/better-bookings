@@ -2,7 +2,8 @@
 
 <h2>Booking Form</h2>
 
-<%= simple_form_for [@booking], url: trip_bookings_url, method: :create do |f| %>
+<%= simple_form_for [@booking], url: trip_bookings_url, method: :post do |f| %>
+<!-- Which methods are HTTP Methods -> GET / POST / PUT / PATCH / DELETE  -->
 
   <div class="form-inputs">
     <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>
