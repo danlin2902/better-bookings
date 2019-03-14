@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'json'
 require 'open-uri'
-require 'pry'
 
 Trip.destroy_all
 Booking.destroy_all
@@ -121,7 +120,6 @@ places_query_array = places_query_array.take(2)
 places_query_array.each do |query|
   response = open(query)
   response_json = JSON.parse(response.read)
-  binding.pry
   if response_json["status"] == "OK"
     results = response_json["results"]
     results.each do |result|

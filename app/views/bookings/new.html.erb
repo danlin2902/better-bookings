@@ -2,7 +2,7 @@
 
 <h2>Booking Form</h2>
 
-<%= simple_form_for [ @trip, @booking] url: bookings_path, method: :index do |f| %>
+<%= simple_form_for [@booking], url: trip_bookings_url, method: :create do |f| %>
 
   <div class="form-inputs">
     <%= f.input :start_date, as: :string, required: true, input_html: {class: "datepicker"} %>

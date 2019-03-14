@@ -1,5 +1,6 @@
 class BookingsController < ApplicationController
     before_action :find_bookings, only: [ :show ]
+    skip_before_action :verify_authenticity_token, :only => :create
 
   def index
     # raise
@@ -20,7 +21,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     @booking.trip = Trip.find(params[:trip_id])
     if @booking.save
-      redirect_to trip_booking_url(@booking.trip, @booking)
+      redirect_to booking_url(@booking)
     else
       render :new
     end
