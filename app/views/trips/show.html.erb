@@ -2,13 +2,13 @@
     <div class="card-trip">
       <%= cl_image_tag @trip.photo %>
       <div class="items" style="display: block; text-align: center;">
-      <h2><%= @trip.name %></h2>
-       <p><%= @trip.destination %></p>
+        <h2><%= @trip.name %></h2>
+        <p><%= @trip.destination %></p>
       </div>
       <div>
-      <p class="card-trip-infos">Trip length: <%= @trip.length %> days Cost: $<%= @trip.cost %>
-      </p>
-      <%= link_to "Write a review", new_trip_review_path(@trip), class: "btn btn-secondary" %>
+        <p class="card-trip-infos">Trip length: <%= @trip.length %> days Cost: $<%= @trip.cost %>
+        </p>
+        <%= link_to "Write a review", new_trip_review_path(@trip), class: "btn btn-secondary" %>
       </div>
     </div>
     <div class="head-container">
@@ -17,7 +17,14 @@
   </div>
 
   <div class="review-container">
-
+    <h3>Reviews for <%= @trip.name %></h3>
+    <div class="review-view">
+      <% @trip.reviews.each do |review| %>
+      <ul>
+        <li class="review-list"><%= review.description %></li>
+      </ul>
+      <% end %>
+    </div>
   </div>
   <h1></h1>
 
