@@ -7,10 +7,11 @@ class TripsController < ApplicationController
 
     @markers = @maptrips.map do |maptrip|
       {
-        lng: maptrip.longitude,
-        lat: maptrip.latitude
+        lat: maptrip.longitude,
+        lng: maptrip.latitude
       }
     end
+
   end
 
   def show
