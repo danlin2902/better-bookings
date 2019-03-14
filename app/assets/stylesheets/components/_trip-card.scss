@@ -78,17 +78,55 @@
   width: 100%;
 }
 .card-index{
-  flex-grow: 1;
-    width: 20%;
-    margin: 10px;
+  flex-grow: 1 0 1;
+    width: 28%;
+    margin: 10px auto;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     border-radius: 3px;
 }
-.index-index:hover{
-  width: 30%;
-  transition: 0.3s;
-  z-index: 1;
+.card-index:hover{
+
+
 }
+// ----- TRIP INDEX CARDS ------------
+.trips-index-header{
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 52px;
+  font-weight: bold;
+}
+.trip-index-container{
+  width: 60%;
+  height: 100vh;
+  display: flex;
+  margin: 0;
+}
+.trip-index-cards{
+  width: 100%;
+
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.trip-img-card{
+
+  min-height: 200px;
+  max-height:200px;
+  width: 100%;
+}
+.trip-card-index{
+  flex-grow: 0 0 1;
+    width: 49%;
+    margin: 5px 5px 5px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    border-radius: 3px;
+}
+// ----- MEDIA FUCKING QUERIES -------
 @media screen and (max-width: 992px) {
   .card-index{
   flex-grow: 1;
@@ -96,6 +134,15 @@
     margin: 10px auto;
   }
   .index-cards{
+    width: 100;
+    margin: 10px auto;
+  }
+  .trip-card-index{
+  flex-grow: 1;
+    width: 50%;
+    margin: 10px auto;
+  }
+  .trip-index-cards{
     width: 100;
     margin: 10px auto;
   }
@@ -109,5 +156,18 @@
     width: 90%;
     margin: 10px auto;
 
+  }
+   .trip-index-cards{
+    width: 100;
+    margin: 10px auto;
+  }
+  .trip-card-index{
+  flex-grow: 1;
+    width: 50%;
+    margin: 10px auto;
+  }
+  .trip-index-cards{
+    width: 100;
+    margin: 10px auto;
   }
 }
