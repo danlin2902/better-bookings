@@ -9,4 +9,5 @@
     resources :reviews
   end
     resources :bookings, only: [:index, :show]
+    get '/dashboard', to: 'trips#dashboard'
 end
