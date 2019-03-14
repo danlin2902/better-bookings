@@ -1,0 +1,10 @@
+<div class="background-page-form"></div>
+
+
+<div class="container better-form" style="background-color: white">
+  <h2>Write a review</h2>
+<%= simple_form_for ([@trip, @review]), url: trip_reviews_url, method: :post do |f| %>
+  <%= f.input :description %>
+  <%= f.submit "Add review", class: "btn btn-flat" %>
+  <% end %>
+</div>
