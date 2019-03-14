@@ -12,9 +12,10 @@
 
     <% end %>
     <div class="card-body">
-      <h5 class="card-title"><%= booking.trip.name %></h5>
-      <p class="card-text"><%= booking.start_date %></p>
-      <p class="card-text"> <%= booking.end_date %></p>
+      <h5 class="card-title"><%= link_to booking.trip.name, booking %></h5>
+      <p class="card-text"><%= booking.trip.destination %></p>
+      <% string = "#{booking.start_date} to #{booking.end_date}"%>
+      <p class="card-text"> <%= string %></p>
 
     </div>
 
