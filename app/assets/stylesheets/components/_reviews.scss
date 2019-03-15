@@ -1,7 +1,44 @@
+.review-h3{
+  text-align: center;
+}
 .review-container{
-  display: flex;
 
-  background-color: #2d2d2d;
-  height: 20vh;
-  width: 30%;
+
+  height: 50vh;
+  width: 90%;
+  margin: 30px auto;
+  padding: 10px;
+  overflow: scroll;
+
+}
+.review-view{
+ display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 70%;
+
+    background-color: #fff;
+    padding: 20px;
+}
+.review-list{
+  margin: 30px;
+
+}
+.review-btn{
+    top: 0;
+     position: relative;
+         bottom: 10px;
+    padding: 10px;
+    right: -69%;
+    border: 2px solid #5fc786;
+    background-color: #F4F7FB;
+    color: #5fc786;
+
+}
+.review-line{
+      width: 80%;
+    background-color: #5fc786;
+    /* padding: 0px; */
+    margin: 23px auto;
 }
