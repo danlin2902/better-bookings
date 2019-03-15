@@ -12,11 +12,14 @@
     <%= stylesheet_pack_tag 'application' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
+    <% unless request.url == "http://localhost:3000/" ||  request.url == "https://airbnb-danlin2902.herokuapp.com/" %>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <% end %>
 
+    <%= render 'shared/flashes' %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+
   </body>
 </html>

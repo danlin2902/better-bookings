@@ -1,6 +1,42 @@
-.navbar-lewagon {
+.navbar-jacob {
   justify-content: space-between;
   background: transparent;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.navbar-jacob .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-jacob .navbar-brand {
+  height: 36px;
+  margin-top: -3px;
+}
+
+.far {
+  font-size: 30px;
+  color: #191919;
+}
+
+.navbar-lewagon-white {
+  background-color: white;
+}
+
+.trip-search {
+  visibility: hidden;
+  position: relative;
+}
+
+.trip-search-visible {
+  visibility: visible;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
   position: fixed;
   top: 0;
   width: 100%;
@@ -16,12 +52,4 @@
   margin-top: -3px;
 }
 
-.far {
-  font-size: 30px;
-  color: #191919;
-}
 
-
-.navbar-lewagon-white {
-  background-color: white;
-}
