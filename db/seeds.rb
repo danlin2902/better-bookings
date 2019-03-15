@@ -8,8 +8,10 @@
 require 'json'
 require 'open-uri'
 
-Trip.destroy_all
+Review.destroy_all
 Booking.destroy_all
+Trip.destroy_all
+User.destroy_all
 
 
 places_array = ["Mexico City", "Cairo", "New York",  "Buenos Aires", "Istanbul", "Manila", "Rio de Janeiro", "Los Angeles", "Paris", "London", "Lima", "Bogota", "Chicago", "Tehran","Hong Kong", "Santiago","Madrid","Toronto","Miami","Pune","Belo Horizonte","Dallas-Fort Worth","Houston", "Barcelona","Atlanta", "St. Petersburg","Washington","Sydney","Dalian","Boston","Melbourne","Phoenix","Montréal","Medellin"]
