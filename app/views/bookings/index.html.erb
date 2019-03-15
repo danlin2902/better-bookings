@@ -1,13 +1,14 @@
 <div class="container">
 
-<h1>My Bookings</h1>
+<h1 class="header-below-navbar">My Bookings</h1>
 
-<div class="index-cards" style="display: flex; flex-wrap: wrap; flex-direction: row;">
+<div class="trip-index-container">
+<div class="trip-index-cards " >
   <% @bookings.each do |booking| %>
 
-  <div class="card">
+  <div class="trip-card-index">
     <% if booking.trip.photo.present? %>
-    <%= cl_image_tag booking.trip.photo, height: 250, width: 250 %>
+    <%= cl_image_tag booking.trip.photo, class: "img-card" %>
     <% else %>
 
     <% end %>
@@ -15,12 +16,12 @@
       <h5 class="card-title"><%= link_to booking.trip.name, booking %></h5>
       <p class="card-text"><%= booking.trip.destination %></p>
       <% string = "#{booking.start_date} to #{booking.end_date}"%>
-      <p class="card-text"> <%= string %></p>
-
+      <p class="card-text"><%= string %></p>
     </div>
 
   </div>
   <% end %>
+</div>
 </div>
 
 </div>

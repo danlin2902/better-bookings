@@ -8,6 +8,7 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 
 import { initUpdateNavbarOnScroll } from '../plugins/navbar';
+
 import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
