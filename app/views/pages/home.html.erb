@@ -1,4 +1,55 @@
 <!-- banner -->
+<div class="navbar navbar-expand-sm navbar-light navbar-jacob">
+  <%= link_to "/", class: "navbar-brand" do %>
+    <i class="far fa-map" ></i>
+    <% end %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+    <div class="trip-search">
+
+    <%= form_tag trips_path, method: :get do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a trip"
+      %>
+    <% end %>
+    </div>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <% if user_signed_in? %>
+        <li class="nav-item active">
+          <%= link_to "Home", "/", class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My Bookings", bookings_url, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Create", new_trip_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "My Trips", dashboard_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+
 
 
   <div class='banner slider'>
@@ -49,3 +100,24 @@
     This footer is made with <i class="fas fa-heart"></i> at Le Wagon
   </div>
 </div>
+<script>
+    const initUpdateNavbarOnScroll = () => {
+      const navbar = document.querySelector('.navbar-jacob');
+      const searchbar = document.querySelector('.trip-search');
+      if (navbar) {
+        console.log("hello")
+        document.addEventListener('scroll', () => {
+          if (window.scrollY >= window.innerHeight) {
+            navbar.classList.add('navbar-lewagon-white');
+            searchbar.classList.remove('trip-search');
+            searchbar.classList.add('trip-search-visible');
+          } else {
+            navbar.classList.remove('navbar-lewagon-white');
+            searchbar.classList.remove('trip-search-visible')
+            searchbar.classList.add('trip-search')
+          }
+        });
+      }
+    }
+    initUpdateNavbarOnScroll();
+</script>
