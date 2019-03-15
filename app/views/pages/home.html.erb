@@ -51,24 +51,27 @@
 
 
 
-  <div class='banner slider'>
-  <div class='banner slide1'></div>
-  <div class='banner slide2'></div>
-  <div class='banner slide3'></div>
 
-  <div class="head-container better-form-search">
-    <h1>Better Bookings</h1>
- <%= simple_form_for :search, url: trips_url, method: :get do |f| %>
-   <%= f.input :query, as: :string, :placeholder => 'Search for trips' %>
-   <%= f.submit "submit ", class: "btn btn-flat" %>
- <% end %>
+  <div class='banner slider'>
+    <div class='banner slide1'></div>
+    <div class='banner slide2'></div>
+    <div class='banner slide3'></div>
+
+    <div class="head-container better-form-search">
+      <h1>Better <i class="far fa-map" style="color: white; font-size: 64px;"></i> Bookings</h1>
+      <%= simple_form_for :search, url: trips_url, method: :get do |f| %>
+      <%= f.input :query, as: :string, :placeholder => 'Where are you going?' %>
+      <%= f.submit "submit ", class: "btn btn-flat" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
-<h2>Recommendations</h2>
+<h2 class="recs">Recommendations</h2>
 
 <div class="index-cards " >
   <% @trip.each do |trip| %>
+  <%= link_to trip_path(trip) do %>
   <div class="card-index">
     <%= cl_image_tag trip.photo, class: "img-card" %>
     <div class="card-body">
@@ -77,7 +80,7 @@
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
   </div>
-  <% end %>
+  <% end %><% end %>
 </div>
 
 
