@@ -11,16 +11,19 @@
 
       </div>
     </div>
-    <div class="show-btn">
-      <%= link_to "Write a review", new_trip_review_path(@trip), class: "btn btn-secondary" %>
-    </div>
   </div>
 
   <div class="review-container">
-    <h3>Reviews for <%= @trip.destination %></h3>
-    <div class="review-view">
+    <div class="review-h3"><h3>Reviews </h3></div>
+    <div class="review-view ">
       <% @trip.reviews.each do |review| %>
-        <div class="review-list"><%= review.description %></div>
+      <div class="review-list"><%= review.description %>
+        <hr class="review-line">
+      </div>
       <% end %>
     </div>
+
   </div>
+    <div class="">
+      <%= link_to "Write a review", new_trip_review_path(@trip), class: "btn btn-flat review-btn" %>
+    </div>
