@@ -7,7 +7,7 @@
     <div class='banner slide3'></div>
 
     <div class="head-container better-form-search">
-      <h1>Better Bookings</h1>
+      <h1>Better <i class="far fa-map" style="color: white; font-size: 64px;"></i> Bookings</h1>
       <%= simple_form_for :search, url: trips_url, method: :get do |f| %>
       <%= f.input :query, as: :string, :placeholder => 'Where are you going?' %>
       <%= f.submit "submit ", class: "btn btn-flat" %>
