@@ -20,6 +20,7 @@
 
 <div class="index-cards " >
   <% @trip.each do |trip| %>
+  <%= link_to trip_path(trip) do %>
   <div class="card-index">
     <%= cl_image_tag trip.photo, class: "img-card" %>
     <div class="card-body">
@@ -28,7 +29,7 @@
       <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
     </div>
   </div>
-  <% end %>
+  <% end %><% end %>
 </div>
 
 
