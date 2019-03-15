@@ -7,7 +7,7 @@
          <p><%= @trip.destination %></p>
         <p class="card-trip-infos">Trip length: <%= @trip.length %> days Cost: $<%= @trip.cost %>
         </p>
-        <%= link_to "Book now", new_trip_booking_url(@trip), class: "btn btn-flat show-btn" %>
+        <%= link_to "Book now", new_trip_booking_url(@trip), class: "btn btn-flat show-btn book-btn" %>
 
       </div>
     </div>

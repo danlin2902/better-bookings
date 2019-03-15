@@ -94,6 +94,12 @@
 .trips-index-header{
   margin: 20px auto;
 
+  text-align: center;
+
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 1.2em;
+  font-weight: bold;
+
 }
 .trip-search{
      margin: 10px;
@@ -136,7 +142,7 @@
     border-radius: 3px;
 }
 .index-card-text{
-      margin-top: 0;
+    margin-top: 0;
     margin-bottom: 1rem;
     max-height: 70px;
     overflow: scroll;
@@ -216,4 +222,12 @@ justify-content: space-evenly;
     width: 100;
     margin: 10px auto;
   }
+}
+
+.show-card-items {
+  text-align: center;
+}
+
+.book-btn {
+  margin-bottom: 10%;
 }
