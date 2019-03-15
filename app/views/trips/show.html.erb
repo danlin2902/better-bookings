@@ -17,7 +17,7 @@
   </div>
 
   <div class="review-container">
-    <h3>Reviews for <%= @trip.name %></h3>
+    <h3>Reviews for <%= @trip.destination %></h3>
     <div class="review-view">
       <% @trip.reviews.each do |review| %>
         <div class="review-list"><%= review.description %></div>

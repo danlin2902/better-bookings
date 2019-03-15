@@ -12,7 +12,7 @@ Trip.destroy_all
 Booking.destroy_all
 
 
-places_array = ["Tokyo", "Delhi", "Shanghai", "Sao Paulo", "Mumbai", "Mexico City", "Beijing", "Kyoto", "Cairo", "New York", "Dhaka", "Karachi", "Buenos Aires", "Kolkata", "Istanbul", "Chongquin", "Lagos", "Manila","Rio de Janeiro", "Guangzhou-Foshan", "Los Angeles", "Moscow", "Kinshasa", "Tianjin", "Paris", "Shenzhen", "Jakarta", "London", "Bangalore","Lima", "Chennai", "Seoul", "Bogota", "Nagoya", "Johannesburg", "Bangkok","Hyderabad", "Chicago","Lahore", "Tehran","Wuhan", "Chengdu","Dongguan", "Nanjing", "Ahmadabad","Hong Kong", "Ho Chi Minh City", "Foshan","Kuala Lumpur", "Baghdad","Santiago","Hangzhou","Riyadh","Shenyang","Madrid","Xian","Toronto","Miami","Pune","Belo Horizonte","Dallas-Fort Worth","Surat","Houston","Singapore","Philadelphia","Kitakyushu","Luanda","Suzhou","Harbin","Barcelona","Atlanta","Khartoum","Dar es Salaam","St. Petersburg","Washington","Abidjan","Guadalajara","Yangon","Alexandria","Ankara","Kabul","Quingdao","Chittagong","Monterrey","Sydney","Dalian","Xiamen","Zhengzhou","Boston","Melbourne","Brazilia","Jeddah","Phoenix","Ji'nan","Montréal","Shantou","Nairobi","Medellin","Fortaleza","Kunming"]
+places_array = ["Mexico City", "Cairo", "New York",  "Buenos Aires", "Istanbul", "Manila", "Rio de Janeiro", "Los Angeles", "Paris", "London", "Lima", "Bogota", "Chicago", "Tehran","Hong Kong", "Santiago","Madrid","Toronto","Miami","Pune","Belo Horizonte","Dallas-Fort Worth","Houston", "Barcelona","Atlanta", "St. Petersburg","Washington","Sydney","Dalian","Boston","Melbourne","Phoenix","Montréal","Medellin"]
 
 previous = ""
 photos_url = "https://maps.googleapis.com/maps/api/place/photo?maxwidth=1600&photoreference="
@@ -63,7 +63,7 @@ end
 
 places_query_array = []
 places_array.each { |place| places_query_array << query_helper(place) }
-places_query_array = places_query_array.take(2)
+places_query_array = places_query_array.sample(5)
 
 places_query_array.each do |query|
   response = open(query)
