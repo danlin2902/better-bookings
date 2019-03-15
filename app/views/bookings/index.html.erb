@@ -2,24 +2,23 @@
 
 <h1 class="header-below-navbar">My Bookings</h1>
 
-<div class="trip-index-container">
-<div class="trip-index-cards " >
   <% @bookings.each do |booking| %>
+<div class="flex-container">
 
-  <div class="trip-card-index">
+  <div class="flex-item">
+    <div class="show-card-booking">
     <% if booking.trip.photo.present? %>
     <%= cl_image_tag booking.trip.photo, class: "img-card" %>
     <% else %>
 
     <% end %>
-    <div class="card-body">
+
       <h5 class="card-title"><%= link_to booking.trip.name, booking %></h5>
       <p class="card-text"><%= booking.trip.destination %></p>
       <% string = "#{booking.start_date} to #{booking.end_date}"%>
       <p class="card-text"><%= string %></p>
     </div>
-
-  </div>
+</div>
   <% end %>
 </div>
 </div>
