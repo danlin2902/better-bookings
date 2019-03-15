@@ -4,6 +4,8 @@
 
 <div class="index-cards " >
   <% @bookings.each do |booking| %>
+      <%= link_to booking_path(booking) do %>
+
   <div class="card-index">
 
     <% if booking.trip.photo.present? %>
@@ -19,7 +21,11 @@
       <p class="card-text"><%= string %></p>
     </div>
 </div>
-  <% end %>
+  <% end %> <% end %>
+
+
+
+
 </div>
 </div>
 
