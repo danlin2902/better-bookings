@@ -1,7 +1,6 @@
 class TripsController < ApplicationController
   before_action :find_trips, only: [ :show ]
   def index
-
     if params[:query].present?
       @trips = Trip.near(params[:query], 500)
             @markers = @trips.map do |maptrip|
@@ -10,7 +9,16 @@ class TripsController < ApplicationController
         lat: maptrip.latitude,
         infoWindow: render_to_string(partial: "/trips/map_box", locals: { trip: maptrip })
       }
-    end
+      end
+    elsif params[:search][:query].present?
+      @trips = Trip.near(params[:search][:query], 500)
+      @markers = @trips.map do |maptrip|
+        {
+          lng: maptrip.longitude,
+          lat: maptrip.latitude,
+          infoWindow: render_to_string(partial: "/trips/map_box", locals: { trip: maptrip })
+        }
+      end
     else
       @trips = Trip.all
       @markers = @trips.map do |maptrip|
@@ -21,7 +29,7 @@ class TripsController < ApplicationController
       }
     end
 
-    @maptrips = Trip.where.not(latitude: nil, longitude: nil)
+    # @maptrips = Trip.where.not(latitude: nil, longitude: nil)
 
 
     # @markers = @maptrips.map do |maptrip|
